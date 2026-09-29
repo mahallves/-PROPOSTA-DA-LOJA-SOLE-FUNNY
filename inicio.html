@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tênis Engraçados</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+body {
+ background: #090909;
+ color: #fff;
+ font-family: "Poppins", sans-serif;
+}
+
+a {
+ color: inherit;
+ text-decoration: none;
+}
+
+.topo {
+ min-height: 88px;
+ padding: 15px 4%;
+ display: flex;
+ align-items: center;
+ gap: 35px;
+ background: #080808;
+ border-bottom: 1px solid #292929;
+}
+
+.logo {
+ min-width: 275px;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+}
+
+.logo-icon {
+ width: 50px;
+ height: 50px;
+ border: 3px solid #fff;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #ffe900;
+ font-size: 30px;
+ transform: rotate(-8deg);
+}
+
+.logo-text {
+ display: flex;
+ flex-direction: column;
+ font-family: "Anton", sans-serif;
+ line-height: .9;
+ font-size: 22px;
+}
+
+.logo-text strong {
+ color: #ffe900;
+ font-size: 25px;
+}
+
+.pesquisa {
+ height: 50px;
+ flex: 1;
+ max-width: 510px;
+ display: flex;
+ align-items: center;
+ padding: 0 8px 0 20px;
+ border: 1px solid #555;
+ border-radius: 30px;
+ background: #111;
+}
+
+.pesquisa input {
+ width: 100%;
+ height: 100%;
+ border: 0;
+ outline: none;
+ background: transparent;
+ color: #fff;
+ font-family: "Poppins", sans-serif;
+ font-size: 14px;
+}
+
+.pesquisa input::placeholder {
+ color: #999;
+}
+
+.pesquisa button {
+ width: 40px;
+ height: 40px;
+ border: none;
+ background: transparent;
+ color: #ffe900;
+ font-size: 28px;
+ cursor: pointer;
+}
+
+.acoes {
+ display: flex;
+ align-items: center;
+ gap: 25px;
+ margin-left: auto;
+}
+
+.acoes a {
+ display: grid;
+ grid-template-columns: 30px auto;
+ column-gap: 5px;
+ font-size: 12px;
+ transition: .2s;
+}
+
+.acoes a:hover {
+ color: #ffe900;
+}
+
+.acoes .icone {
+ grid-row: 1 / 3;
+ display: flex;
+ align-items: center;
+ font-size: 25px;
+}
+
+.acoes small {
+ color: #aaa;
+}
+
+.acoes b {
+ font-weight: 600;
+}
+
+.menu {
+ min-height: 53px;
+ padding: 0 4%;
+ display: flex;
+ align-items: center;
+ gap: 40px;
+ background: #0b0b0b;
+ border-bottom: 1px solid #242424;
+}
+
+.menu a {
+ height: 53px;
+ display: flex;
+ align-items: center;
+ position: relative;
+ font-size: 14px;
+ transition: .2s;
+}
+
+.menu a:hover {
+ color: #ffe900;
+}
+
+.menu .ativo::after {
+ content: "";
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ height: 3px;
+ background: #ffe900;
+}
+
+.menu span {
+ margin-left: 6px;
+}
+
+.hero {
+ min-height: 390px;
+ padding: 45px 7%;
+ position: relative;
+ overflow: hidden;
+ display: flex;
+ align-items: center;
+ background: radial-gradient(circle at 70% 50%, #292929 0, #111 30%, #090909 70%);
+ border-bottom: 1px solid #292929;
+}
+
+.hero::before {
+ content: "";
+ position: absolute;
+ width: 600px;
+ height: 600px;
+ right: 15%;
+ top: -120px;
+ border: 1px solid #292929;
+ border-radius: 50%;
+}
+
+.hero-texto {
+ position: relative;
+ z-index: 2;
+}
+
+.mini-titulo {
+ margin-bottom: 10px;
+ color: #aaa;
+ font-size: 12px;
+ letter-spacing: 2px;
+}
+
+.hero h1 {
+ font-family: "Anton", sans-serif;
+ font-size: clamp(60px, 7vw, 105px);
+ line-height: .82;
+ transform: rotate(-2deg);
+}
+
+.hero h1 strong {
+ color: #ffe900;
+}
+
+.frase {
+ margin-top: 25px;
+ font-size: 19px;
+ font-weight: 600;
+}
+
+.hero-link {
+ display: inline-block;
+ margin-top: 20px;
+ padding: 12px 22px;
+ background: #ffe900;
+ color: #050505;
+ border-radius: 5px;
+ font-weight: 800;
+ transition: .2s;
+}
+
+.hero-link:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 8px 25px #ffe90033;
+}
+
+.hero-produto {
+ position: absolute;
+ right: 25%;
+ width: 300px;
+ height: 230px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transform: rotate(-8deg);
+}
+
+.tenis-fake {
+ font-size: 170px;
+ filter: drop-shadow(0 20px 20px #000);
+}
+
+.brilho {
+ position: absolute;
+ width: 240px;
+ height: 80px;
+ border-radius: 50%;
+ background: #ffe900;
+ filter: blur(80px);
+ opacity: .2;
+}
+
+.hero-destaque {
+ position: absolute;
+ right: 7%;
+ top: 70px;
+ width: 150px;
+ padding: 22px;
+ background: #ffe900;
+ color: #050505;
+ transform: rotate(5deg);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: "Anton", sans-serif;
+ font-size: 21px;
+}
+
+.hero-destaque strong {
+ font-size: 28px;
+}
+
+.categorias {
+ padding: 30px 4%;
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 15px;
+}
+
+.categoria {
+ min-height: 95px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 8px;
+ background: #101010;
+ border: 1px solid #292929;
+ border-radius: 12px;
+ transition: .2s;
+}
+
+.categoria:hover {
+ border-color: #ffe900;
+ transform: translateY(-4px);
+ background: #151515;
+}
+
+.categoria div {
+ font-size: 27px;
+}
+
+.categoria span {
+ font-size: 12px;
+ font-weight: 600;
+}
+
+.produtos {
+ padding: 15px 4% 45px;
+}
+
+.titulo-secao {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.titulo-secao div {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+}
+
+.coroa {
+ color: #ffe900;
+ font-size: 32px;
+}
+
+.titulo-secao h2 {
+ font-size: 25px;
+}
+
+.titulo-secao a {
+ color: #ffe900;
+ font-size: 13px;
+ font-weight: 700;
+}
+
+.linha-amarela {
+ width: 55px;
+ height: 4px;
+ margin: 7px 0 25px 45px;
+ background: #ffe900;
+}
+
+.grid-produtos {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 20px;
+}
+
+.produto {
+ position: relative;
+ overflow: hidden;
+ background: #111;
+ border: 1px solid #303030;
+ border-radius: 12px;
+ transition: .25s;
+}
+
+.produto:hover {
+ transform: translateY(-7px);
+ border-color: #ffe900;
+ box-shadow: 0 15px 35px #000;
+}
+
+.etiqueta {
+ position: absolute;
+ z-index: 3;
+ top: 12px;
+ right: 12px;
+ padding: 5px 11px;
+ border-radius: 20px;
+ background: #ffe900;
+ color: #000;
+ font-size: 11px;
+ font-weight: 800;
+}
+
+.produto-imagem {
+ height: 215px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 130px;
+ background: linear-gradient(145deg, #181818, #080808);
+ transition: .3s;
+}
+
+.produto:hover .produto-imagem {
+ transform: scale(1.05);
+}
+
+.tenis-1 {
+ background: linear-gradient(145deg, #211508, #090909);
+}
+
+.tenis-2 {
+ background: linear-gradient(145deg, #1e1b06, #090909);
+}
+
+.tenis-3 {
+ background: linear-gradient(145deg, #071b27, #090909);
+}
+
+.tenis-4 {
+ background: linear-gradient(145deg, #17170b, #090909);
+}
+
+.produto-info {
+ padding: 18px;
+}
+
+.produto-info h3 {
+ margin-bottom: 4px;
+ font-size: 15px;
+}
+
+.produto-info p {
+ color: #999;
+ font-size: 12px;
+}
+
+.espaco-botao {
+ height: 40px;
+ margin-top: 15px;
+ border: 1px dashed #555;
+ border-radius: 20px;
+}
+
+.banner-promocao {
+ min-height: 145px;
+ margin: 0 4% 45px;
+ padding: 25px 35px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ overflow: hidden;
+ position: relative;
+ border: 1px solid #292929;
+ border-radius: 15px;
+ background: linear-gradient(100deg, #111, #191919);
+}
+
+.banner-promocao::before {
+ content: "";
+ position: absolute;
+ width: 400px;
+ height: 400px;
+ left: 35%;
+ top: -200px;
+ border-radius: 50%;
+ background: #ffe900;
+ opacity: .04;
+}
+
+.promo-texto span {
+ color: #ffe900;
+ font-size: 22px;
+}
+
+.promo-texto h2 {
+ font-family: "Anton", sans-serif;
+ font-size: 42px;
+ line-height: .9;
+}
+
+.promo-texto p {
+ color: #ffe900;
+ font-weight: 700;
+ font-size: 14px;
+}
+
+.promo-preco {
+ padding: 12px 28px;
+ background: #ffe900;
+ color: #050505;
+ transform: rotate(-2deg);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.promo-preco small {
+ font-weight: 800;
+ font-size: 11px;
+}
+
+.promo-preco strong {
+ font-family: "Anton", sans-serif;
+ font-size: 45px;
+ line-height: .9;
+}
+
+.promo-tenis {
+ font-size: 70px;
+ transform: rotate(-5deg);
+}
+
+.garantia {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-size: 15px;
+ text-align: center;
+}
+
+.garantia span {
+ color: #ffe900;
+ font-size: 30px;
+}
+
+.informacoes {
+ padding: 25px 4%;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 25px;
+ border-top: 1px solid #292929;
+ border-bottom: 1px solid #292929;
+}
+
+.informacoes > div {
+ display: flex;
+ align-items: center;
+ gap: 14px;
+}
+
+.informacoes > div > span {
+ font-size: 28px;
+}
+
+.informacoes strong,
+.informacoes small {
+ display: block;
+}
+
+.informacoes strong {
+ font-size: 12px;
+}
+
+.informacoes small {
+ margin-top: 3px;
+ color: #888;
+ font-size: 10px;
+}
+
+footer {
+ padding: 35px 4%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 30px;
+ background: #060606;
+}
+
+.footer-logo {
+ display: flex;
+ flex-direction: column;
+ font-family: "Anton", sans-serif;
+ font-size: 20px;
+ line-height: .9;
+}
+
+.footer-logo span {
+ color: #ffe900;
+}
+
+.footer-links {
+ display: flex;
+ gap: 25px;
+}
+
+.footer-links a {
+ color: #aaa;
+ font-size: 12px;
+}
+
+.footer-links a:hover {
+ color: #ffe900;
+}
+
+footer p {
+ color: #666;
+ font-size: 10px;
+}
+
+@media (max-width: 1050px) {
+
+ .topo {
+ flex-wrap: wrap;
+ }
+
+ .logo {
+ min-width: auto;
+ }
+
+ .pesquisa {
+ order: 3;
+ max-width: none;
+ width: 100%;
+ }
+
+ .acoes {
+ margin-left: auto;
+ }
+
+ .hero-produto {
+ right: 18%;
+ }
+
+ .categorias {
+ grid-template-columns: repeat(3, 1fr);
+ }
+
+ .grid-produtos {
+ grid-template-columns: repeat(2, 1fr);
+ }
+
+ .informacoes {
+ grid-template-columns: repeat(2, 1fr);
+ }
+
+}
+
+@media (max-width: 700px) {
+
+ .topo {
+ padding: 15px 20px;
+ gap: 15px;
+ }
+
+ .logo-text {
+ font-size: 18px;
+ }
+
+ .logo-text strong {
+ font-size: 21px;
+ }
+
+ .logo-icon {
+ width: 42px;
+ height: 42px;
+ font-size: 24px;
+ }
+
+ .acoes {
+ gap: 10px;
+ }
+
+ .acoes a {
+ display: block;
+ text-align: center;
+ }
+
+ .acoes small,
+ .acoes b {
+ display: none;
+ }
+
+ .menu {
+ padding: 0 20px;
+ gap: 22px;
+ overflow-x: auto;
+ white-space: nowrap;
+ }
+
+ .menu a {
+ font-size: 12px;
+ }
+
+ .hero {
+ min-height: 500px;
+ padding: 35px 25px;
+ align-items: flex-start;
+ }
+
+ .hero h1 {
+ font-size: 62px;
+ }
+
+ .hero-produto {
+ right: 10%;
+ bottom: 40px;
+ }
+
+ .hero-destaque {
+ top: 40px;
+ right: 20px;
+ transform: rotate(4deg) scale(.8);
+ }
+
+ .categorias {
+ padding: 25px 20px;
+ grid-template-columns: repeat(2, 1fr);
+ }
+
+ .produtos {
+ padding-left: 20px;
+ padding-right: 20px;
+ }
+
+ .grid-produtos {
+ grid-template-columns: 1fr;
+ }
+
+ .banner-promocao {
+ margin-left: 20px;
+ margin-right: 20px;
+ padding: 25px;
+ flex-wrap: wrap;
+ gap: 20px;
+ }
+
+ .promo-tenis {
+ display: none;
+ }
+
+ .informacoes {
+ padding: 25px 20px;
+ grid-template-columns: 1fr;
+ }
+
+ footer {
+ padding: 30px 20px;
+ flex-direction: column;
+ align-items: flex-start;
+ }
+
+ .footer-links {
+ flex-wrap: wrap;
+ }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topo">
+
+ <a href="#inicio" class="logo">
+ <div class="logo-icon"> </div>
+
+ <div class="logo-text">
+ <span>TÊNIS</span>
+ <strong>ENGRAÇADOS</strong>
+ </div>
+ </a>
+
+ <div class="pesquisa">
+ <input type="text" placeholder="Busque aqui o seu tênis engraçado...">
+ <button type="button">⌕</button>
+ </div>
+
+ <div class="acoes">
+
+ <a href="#conta">
+ <span class="icone">♙</span>
+ <small>Minha</small>
+ <b>conta</b>
+ </a>
+
+ <a href="#favoritos">
+ <span class="icone">♡</span>
+ <small>Meus</small>
+ <b>favoritos</b>
+ </a>
+
+ <a href="#carrinho">
+ <span class="icone"> </span>
+ <small>Meu</small>
+ <b>carrinho</b>
+ </a>
+
+ </div>
+
+</header>
+
+<nav class="menu">
+
+ <a class="ativo" href="#inicio">Início</a>
+
+ <a href="#tenis">Todos os Tênis</a>
+
+ <a href="#categorias">
+ Categorias <span>⌄</span>
+ </a>
+
+ <a href="#lancamentos">Lançamentos</a>
+
+ <a href="#promocoes">Promoções</a>
+
+ <a href="#sobre">Sobre Nós</a>
+
+ <a href="#contato">Contato</a>
+
+</nav>
+
+<main>
+
+<section class="hero" id="inicio">
+
+ <div class="hero-texto">
+
+ <p class="mini-titulo">
+ PARA QUEM NÃO TEM MEDO DE SER DIFERENTE
+ </p>
+
+ <h1>
+ TÊNIS<br>
+ <strong>ENGRAÇADOS</strong>
+ </h1>
+
+ <p class="frase">
+ Estilo + diversão<br>
+ em cada passo!
+ </p>
+
+ <a href="#tenis" class="hero-link">
+ VER OS TÊNIS →
+ </a>
+
+ </div>
+
+ <div class="hero-produto">
+
+ <div class="brilho"></div>
+
+ <div class="tenis-fake">
+ 
+ </div>
+
+ </div>
+
+ <div class="hero-destaque">
+
+ <span>ESTILO</span>
+ <strong>+</strong>
+ <span>DIVERSÃO</span>
+ <strong>=</strong>
+ <span>VOCÊ!</span>
+
+ </div>
+
+</section>
+
+<section class="categorias" id="categorias">
+
+ <a href="#tenis" class="categoria">
+ <div> </div>
+ <span>Todos os Tênis</span>
+ </a>
+
+ <a href="#desenhos" class="categoria">
+ <div> </div>
+ <span>Desenhos Animados</span>
+ </a>
+
+ <a href="#memes" class="categoria">
+ <div> </div>
+ <span>Memes</span>
+ </a>
+
+ <a href="#engracados" class="categoria">
+ <div> </div>
+ <span>Estampas Engraçadas</span>
+ </a>
+
+ <a href="#personalizados" class="categoria">
+ <div> </div>
+ <span>Personalizados</span>
+ </a>
+
+ <a href="#lancamentos" class="categoria">
+ <div>★</div>
+ <span>Lançamentos</span>
+ </a>
+
+</section>
+
+<section class="produtos" id="tenis">
+
+ <div class="titulo-secao">
+
+ <div>
+ <span class="coroa">♛</span>
+ <h2>Destaques da Semana</h2>
+ </div>
+
+ <a href="#tenis">
+ Ver todos →
+ </a>
+
+ </div>
+
+ <div class="linha-amarela"></div>
+
+ <div class="grid-produtos">
+
+ <a href="#produto1" class="produto">
+
+ <div class="etiqueta">
+ NOVO
+ </div>
+
+ <div class="produto-imagem tenis-1">
+ 
+ </div>
+
+ <div class="produto-info">
+
+ <h3>
+ Tênis Tung Tung Sahur
+ </h3>
+
+ <p>
+ Estampa Brainrot
+ </p>
+
+ <div class="espaco-botao"></div>
+
+ </div>
+
+ </a>
+
+ <a href="#produto2" class="produto">
+
+ <div class="etiqueta">
+ NOVO
+ </div>
+
+ <div class="produto-imagem tenis-2">
+ 
+ </div>
+
+ <div class="produto-info">
+
+ <h3>
+ Tênis Simpsons
+ </h3>
+
+ <p>
+ Toda a família no seu pé
+ </p>
+
+ <div class="espaco-botao"></div>
+
+ </div>
+
+ </a>
+
+ <a href="#produto3" class="produto">
+
+ <div class="etiqueta">
+ NOVO
+ </div>
+
+ <div class="produto-imagem tenis-3">
+ 
+ </div>
+
+ <div class="produto-info">
+
+ <h3>
+ Tênis Stitch
+ </h3>
+
+ <p>
+ Fofo e engraçado na medida
+ </p>
+
+ <div class="espaco-botao"></div>
+
+ </div>
+
+ </a>
+
+ <a href="#produto4" class="produto">
+
+ <div class="etiqueta">
+ NOVO
+ </div>
+
+ <div class="produto-imagem tenis-4">
+ 
+ </div>
+
+ <div class="produto-info">
+
+ <h3>
+ Tênis Vaca Maluca
+ </h3>
+
+ <p>
+ Porque ser normal é chato
+ </p>
+
+ <div class="espaco-botao"></div>
+
+ </div>
+
+ </a>
+
+ </div>
+
+</section>
+
+<section class="banner-promocao" id="promocoes">
+
+ <div class="promo-texto">
+ <span>♛</span>
+ <h2>PROMOÇÃO</h2>
+ <p>TÊNIS ENGRAÇADOS</p>
+ </div>
+
+ <div class="promo-preco">
+ <small>A PARTIR DE</small>
+ <strong>R$ 49,99</strong>
+ </div>
+
+ <div class="promo-tenis">
+ 
+ </div>
+
+ <div class="garantia">
+ <strong>GARANTA<br>O SEU!</strong>
+ <span> </span>
+ </div>
+
+</section>
+
+<section class="informacoes">
+
+ <div>
+ <span> </span>
+ <div>
+ <strong>Entrega para todo o Brasil</strong>
+ <small>Com rastreamento</small>
+ </div>
+ </div>
+
+ <div>
+ <span> </span>
+ <div>
+ <strong>Compra segura</strong>
+ <small>Seus dados protegidos</small>
+ </div>
+ </div>
+
+ <div>
+ <span>▣</span>
+ <div>
+ <strong>Diversas formas de pagamento</strong>
+ <small>Pix, cartão, boleto</small>
+ </div>
+ </div>
+
+ <div>
+ <span>♧</span>
+ <div>
+ <strong>Atendimento especializado</strong>
+ <small>Tire suas dúvidas</small>
+ </div>
+ </div>
+
+</section>
+
+</main>
+
+<footer id="contato">
+
+ <div class="footer-logo">
+ <strong>TÊNIS</strong>
+ <span>ENGRAÇADOS</span>
+ </div>
+
+ <div class="footer-links">
+ <a href="#sobre">Sobre Nós</a>
+ <a href="#contato">Contato</a>
+ <a href="#trocas">Trocas e Devoluções</a>
+ <a href="#privacidade">Privacidade</a>
+ </div>
+
+ <p>
+ © 2026 Tênis Engraçados. Todos os direitos reservados.
+ </p>
+
+</footer>
+
+</body>
+</html>
