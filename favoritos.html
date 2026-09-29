@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Favoritos - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+            min-height: 100vh; 
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+            gap: 30px; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            white-space: nowrap; 
+        } 
+        .pesquisa { 
+            width: 430px; 
+            height: 43px; 
+            background: #1c1c1c; 
+            border: 1px solid #333; 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            padding: 0 15px; 
+        } 
+        .pesquisa input { 
+            width: 100%; 
+            background: transparent; 
+            border: none; 
+            outline: none; 
+            color: white; 
+            font-size: 14px; 
+        } 
+        .pesquisa input::placeholder { 
+            color: #777; 
+        } 
+        .acoes { 
+            display: flex; 
+            gap: 22px; 
+        } 
+        .acoes a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+        } 
+        .acoes a:hover { 
+            color: #ffd500; 
+        } 
+        nav { 
+            height: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-top: 1px solid #222; 
+        } 
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 38px; 
+        } 
+        nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        } 
+        nav a:hover { 
+            color: #ffd500; 
+        } 
+        .conteudo { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 60px 30px 80px; 
+        } 
+        .titulo { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            margin-bottom: 35px; 
+        } 
+        .titulo h1 { 
+            font-size: 36px; 
+        } 
+        .titulo p { 
+            color: #888; 
+            font-size: 14px; 
+            margin-top: 8px; 
+        } 
+        .quantidade { 
+            background: #ffd500; 
+            color: #111; 
+            padding: 10px 17px; 
+            border-radius: 20px; 
+            font-size: 13px; 
+            font-weight: 800; 
+        } 
+        .produtos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        } 
+        .produto { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 13px; 
+            overflow: hidden; 
+            transition: border-color 0.2s, transform 0.2s; 
+        } 
+        .produto:hover { 
+            border-color: #ffd500; 
+            transform: translateY(-4px); 
+        } 
+        .imagem { 
+            height: 270px; 
+            background: #202020; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        } 
+        .imagem img { 
+            width: 88%; 
+            height: 88%; 
+            object-fit: contain; 
+        } 
+        .favorito { 
+            position: absolute; 
+            right: 15px; 
+            top: 15px; 
+            width: 38px; 
+            height: 38px; 
+            background: #ffd500; 
+            color: #111; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 16px; 
+        } 
+        .produto-info { 
+            padding: 22px; 
+        } 
+        .produto-info h2 { 
+            font-size: 19px; 
+            margin-bottom: 8px; 
+        } 
+        .produto-info p { 
+            color: #888; 
+            font-size: 13px; 
+            margin-bottom: 18px; 
+        } 
+        .preco { 
+            color: #ffd500; 
+            font-size: 21px; 
+            font-weight: 900; 
+            margin-bottom: 18px; 
+        } 
+        .botoes { 
+            display: flex; 
+            gap: 10px; 
+        } 
+        .carrinho { 
+            flex: 1; 
+            height: 45px; 
+            border: none; 
+            border-radius: 7px; 
+            background: #ffd500; 
+            color: #111; 
+            font-weight: 900; 
+            cursor: pointer; 
+            transition: background 0.2s;
+        } 
+        .carrinho:hover { 
+            background: #e8c000; 
+        } 
+        .remover { 
+            width: 45px; 
+            height: 45px; 
+            border: 1px solid #3a3a3a; 
+            border-radius: 7px; 
+            background: #202020; 
+            color: #aaa; 
+            cursor: pointer; 
+            font-size: 17px; 
+            transition: color 0.2s, border-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        .remover:hover { 
+            color: #ff4b4b; 
+            border-color: #ff4b4b; 
+        } 
+        .continuar { 
+            display: block; 
+            width: fit-content; 
+            margin: 45px auto 0; 
+            color: #aaa; 
+            text-decoration: none; 
+            font-size: 14px; 
+        } 
+        .continuar:hover { 
+            color: #ffd500; 
+            text-decoration: underline;
+        } 
+        @media (max-width: 900px) { 
+            .pesquisa { width: 300px; } 
+        } 
+        @media (max-width: 650px) { 
+            .topo { height: auto; padding: 20px; flex-wrap: wrap; } 
+            .logo { width: 100%; text-align: center; } 
+            .pesquisa { width: 100%; } 
+            .acoes { width: 100%; justify-content: center; } 
+            nav { overflow-x: auto; justify-content: flex-start; padding: 15px; } 
+            nav ul { gap: 25px; white-space: nowrap; } 
+            .conteudo { padding: 40px 15px; } 
+            .titulo { align-items: flex-start; gap: 15px; flex-direction: column; } 
+            .titulo h1 { font-size: 29px; } 
+        } 
+    </style>
+</head>
+<body> 
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <div class="pesquisa"> 
+                <input type="text" placeholder="Pesquisar tênis..."> 
+            </div> 
+            <div class="acoes"> 
+                <a href="login.html">Minha conta</a> 
+                <a href="favoritos.html">♡ Favoritos</a> 
+                <a href="carrinho.html">🛒 Carrinho</a> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul> 
+                <li><a href="inicio.html">Início</a></li> 
+                <li><a href="todos.html">Todos os Tênis</a></li> 
+                <li><a href="categorias.html">Categorias</a></li> 
+                <li><a href="lançamento.html">Lançamentos</a></li> 
+                <li><a href="promoção.html">Promoções</a></li> 
+                <li><a href="sobre.html">Sobre Nós</a></li> 
+                <li><a href="contato.html">Contato</a></li> 
+            </ul> 
+        </nav> 
+    </header> 
+    <main class="conteudo"> 
+        <div class="titulo"> 
+            <div> 
+                <h1>♡ Meus favoritos</h1> 
+                <p>Os tênis que você não quer perder de vista.</p> 
+            </div> 
+            <div class="quantidade" id="qtd-contador"> 
+                1 item 
+            </div> 
+        </div> 
+        <section class="produtos" id="grid-produtos"> 
+            <div class="produto"> 
+                <div class="imagem"> 
+                    <img src="images/tenis1.jpg" alt="Tênis Brainrot"> 
+                    <div class="favorito">❤️</div> 
+                </div> 
+                <div class="produto-info"> 
+                    <h2>Tênis Brainrot</h2> 
+                    <p> Estampa engraçada e design exclusivo </p> 
+                    <div class="preco"> R$ 49,99 </div> 
+                    <div class="botoes"> 
+                        <button class="carrinho" type="button" onclick="window.location.href='carrinho.html'"> ADICIONAR AO CARRINHO </button> 
+                        <button class="remover" type="button">💔</button> 
+                    </div> 
+                </div> 
+            </div> 
+        </section> 
+        <a href="todos.html" class="continuar"> ← Continuar comprando </a> 
+    </main>

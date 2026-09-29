@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Tênis Engraçados | Home</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+            gap: 30px; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            white-space: nowrap; 
+        } 
+        .pesquisa { 
+            width: 430px; 
+            height: 43px; 
+            background: #1c1c1c; 
+            border: 1px solid #333; 
+            border-radius: 8px; 
+            padding: 0 15px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .pesquisa input { 
+            width: 100%; 
+            border: none; 
+            outline: none; 
+            background: transparent; 
+            color: white; 
+            font-size: 14px; 
+        } 
+        .pesquisa input::placeholder { 
+            color: #777; 
+        } 
+        .acoes { 
+            display: flex; 
+            gap: 22px; 
+        } 
+        .acoes a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            transition: color 0.2s;
+        } 
+        .acoes a:hover { 
+            color: #ffd500; 
+        } 
+        nav { 
+            height: 50px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-top: 1px solid #222; 
+        } 
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 38px; 
+        } 
+        nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        } 
+        nav a:hover { 
+            color: #ffd500; 
+        } 
+        .principal { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 50px 30px; 
+        } 
+        .banner { 
+            background: #ffd500; 
+            color: #111; 
+            border-radius: 15px; 
+            min-height: 300px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 45px 60px; 
+            overflow: hidden; 
+        } 
+        .banner-texto { 
+            max-width: 500px; 
+        } 
+        .banner h1 { 
+            font-size: 42px; 
+            line-height: 1.05; 
+            margin-bottom: 15px; 
+        } 
+        .banner p { 
+            font-size: 16px; 
+            line-height: 1.5; 
+            margin-bottom: 25px; 
+        } 
+        .botao { 
+            display: inline-block; 
+            background: #111; 
+            color: #ffd500; 
+            text-decoration: none; 
+            padding: 13px 25px; 
+            border-radius: 7px; 
+            font-size: 14px; 
+            font-weight: bold; 
+            transition: background 0.2s, transform 0.2s;
+        } 
+        .botao:hover { 
+            background: #222;
+            transform: translateY(-2px);
+        } 
+        .banner-imagem { 
+            width: 380px; 
+            height: 240px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        } 
+        .banner-imagem img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+            transform: rotate(-7deg); 
+            filter: drop-shadow(0 15px 10px rgba(0,0,0,0.2));
+        } 
+        .secao { 
+            margin-top: 55px; 
+        } 
+        .secao-titulo { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 25px; 
+        } 
+        .secao-titulo h2 { 
+            font-size: 27px; 
+        } 
+        .secao-titulo a { 
+            color: #ffd500; 
+            text-decoration: none; 
+            font-size: 13px; 
+        } 
+        .secao-titulo a:hover {
+            text-decoration: underline;
+        }
+        .produtos { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 22px; 
+        } 
+        .produto { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            text-decoration: none;
+            color: white;
+            transition: border-color 0.2s, transform 0.2s;
+        } 
+        .produto:hover {
+            border-color: #ffd500;
+            transform: translateY(-5px);
+        }
+        .produto-imagem { 
+            height: 250px; 
+            background: #202020; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        } 
+        .produto-imagem img { 
+            width: 90%; 
+            height: 90%; 
+            object-fit: contain; 
+        } 
+        .produto-info { 
+            padding: 20px; 
+        } 
+        .produto-info h3 { 
+            font-size: 18px; 
+            margin-bottom: 8px; 
+        } 
+        .produto-info p { 
+            color: #888; 
+            font-size: 13px; 
+            margin-bottom: 15px; 
+        } 
+        .preco { 
+            color: #ffd500; 
+            font-size: 20px; 
+            font-weight: 900; 
+        } 
+        .categorias { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+        } 
+        .categoria { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 10px; 
+            padding: 25px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: white; 
+            transition: border-color 0.2s, transform 0.2s;
+        } 
+        .categoria:hover { 
+            border-color: #ffd500; 
+            transform: scale(1.02);
+        } 
+        .categoria h3 { 
+            margin-bottom: 7px; 
+        } 
+        .categoria p { 
+            color: #777; 
+            font-size: 13px; 
+        } 
+        @media (max-width: 900px) { 
+            .pesquisa { width: 300px; } 
+            .banner { padding: 35px; } 
+            .banner-imagem { width: 300px; } 
+            .produtos, .categorias { grid-template-columns: repeat(2, 1fr); } 
+        } 
+        @media (max-width: 650px) { 
+            .topo { height: auto; padding: 20px; flex-wrap: wrap; } 
+            .logo { width: 100%; text-align: center; } 
+            .pesquisa { width: 100%; } 
+            .acoes { width: 100%; justify-content: center; } 
+            nav { overflow-x: auto; justify-content: flex-start; padding: 15px; } 
+            nav ul { gap: 25px; white-space: nowrap; } 
+            .principal { padding: 30px 15px; } 
+            .banner { flex-direction: column; text-align: center; padding: 35px 20px; } 
+            .banner h1 { font-size: 32px; } 
+            .banner-imagem { width: 100%; height: 200px; margin-top: 20px; } 
+            .produtos, .categorias { grid-template-columns: 1fr; } 
+        } 
+    </style>
+</head>
+<body> 
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <div class="pesquisa"> 
+                <input type="text" placeholder="Pesquisar tênis..."> 
+            </div> 
+            <div class="acoes"> 
+                <a href="login.html">Minha conta</a> 
+                <a href="favoritos.html">♡ Favoritos</a> 
+                <a href="carrinho.html">🛒 Carrinho</a> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul> 
+                <li><a href="inicio.html">Início</a></li> 
+                <li><a href="todos.html">Todos os Tênis</a></li> 
+                <li><a href="categorias.html">Categorias</a></li> 
+                <li><a href="lançamento.html">Lançamentos</a></li> 
+                <li><a href="promoção.html">Promoções</a></li> 
+                <li><a href="sobre.html">Sobre Nós</a></li> 
+                <li><a href="contato.html">Contato</a></li> 
+            </ul> 
+        </nav> 
+    </header> 
+    <main class="principal"> 
+        <section class="banner"> 
+            <div class="banner-texto"> 
+                <h1>Tênis diferentes para pessoas diferentes.</h1> 
+                <p> Encontre modelos engraçados, criativos e fora do comum para deixar seu estilo ainda mais divertido. </p> 
+                <a href="todos.html" class="botao"> VER TÊNIS </a> 
+            </div> 
+            <div class="banner-imagem"> 
+                <img src="https://github.com/mahallves/-PROPOSTA-DA-LOJA-SOLE-FUNNY/blob/2c96f16887dc9d8dbc34c07cda6d1f77728ea49d/IMG_0949.jpeg" alt="Tênis engraçado"> 
+            </div> 
+        </section> 
+        <section class="secao"> 
+            <div class="secao-titulo"> 
+                <h2>Tênis em destaque</h2> 
+                <a href="todos.html">Ver todos →</a> 
+            </div> 
+            <div class="produtos"> 
+                <a href="produto.html" class="produto"> 
+                    <div class="produto-imagem"> 
+                        <img src="images/tenis1.jpg" alt="Tênis engraçado"> 
+                    </div> 
+                    <div class="produto-info"> 
+                        <h3>Tênis Brainrot</h3> 
+                        <p>Estampa divertida e diferente</p> 
+                        <div class="preco">R$ 49,99</div> 
+                    </div> 
+                </a> 
+                <a href="produto.html" class="produto"> 
+                    <div class="produto-imagem"> 

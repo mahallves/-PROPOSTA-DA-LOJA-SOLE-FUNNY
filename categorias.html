@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Categorias - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+            min-height: 100vh;
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+            gap: 30px; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            white-space: nowrap; 
+        } 
+        .pesquisa { 
+            width: 430px; 
+            height: 43px; 
+            background: #1c1c1c; 
+            border: 1px solid #333; 
+            border-radius: 8px; 
+            padding: 0 15px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .pesquisa input { 
+            width: 100%; 
+            border: none; 
+            outline: none; 
+            background: transparent; 
+            color: white; 
+            font-size: 14px; 
+        } 
+        .pesquisa input::placeholder { 
+            color: #777; 
+        } 
+        .acoes-nav { 
+            display: flex; 
+            gap: 22px; 
+        } 
+        .acoes-nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            transition: color 0.2s;
+        } 
+        .acoes-nav a:hover { 
+            color: #ffd500; 
+        } 
+        nav { 
+            height: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-top: 1px solid #222; 
+        } 
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 38px; 
+        } 
+        nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        } 
+        nav a:hover { 
+            color: #ffd500; 
+        } 
+        main { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 60px 30px 80px; 
+        } 
+        .titulo { 
+            margin-bottom: 35px; 
+        } 
+        .titulo h1 { 
+            font-size: 36px; 
+            margin-bottom: 8px; 
+        } 
+        .titulo p { 
+            color: #888; 
+            font-size: 15px;
+        } 
+        .categorias { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        } 
+        .categoria { 
+            background: #151515; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            text-decoration: none; 
+            color: #fff; 
+            border: 1px solid #292929; 
+            transition: border-color 0.2s, transform 0.2s; 
+        } 
+        .categoria:hover { 
+            border-color: #ffd500; 
+            transform: translateY(-4px); 
+        } 
+        .categoria img { 
+            width: 100%; 
+            height: 190px; 
+            background: #202020;
+            object-fit: cover; 
+            display: block; 
+        } 
+        .categoria-info { 
+            padding: 20px; 
+        } 
+        .categoria-info h2 { 
+            color: #ffd500; 
+            font-size: 21px; 
+            margin-bottom: 8px; 
+        } 
+        .categoria-info p { 
+            color: #aaa; 
+            font-size: 14px; 
+            line-height: 1.5; 
+        } 
+        .ver { 
+            display: inline-block; 
+            margin-top: 15px; 
+            color: #fff; 
+            font-size: 14px; 
+            font-weight: bold; 
+            transition: color 0.2s;
+        } 
+        .categoria:hover .ver { 
+            color: #ffd500; 
+        } 
+        @media (max-width: 900px) { 
+            .pesquisa { width: 300px; } 
+        } 
+        @media (max-width: 650px) { 
+            .topo { height: auto; padding: 20px; flex-wrap: wrap; } 
+            .logo { width: 100%; text-align: center; } 
+            .pesquisa { width: 100%; } 
+            .acoes-nav { width: 100%; justify-content: center; } 
+            nav { overflow-x: auto; justify-content: flex-start; padding: 15px; } 
+            nav ul { gap: 25px; white-space: nowrap; } 
+            main { padding: 40px 15px; } 
+            .titulo h1 { font-size: 29px; } 
+        } 
+    </style>
+</head>
+<body>
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <div class="pesquisa"> 
+                <input type="text" placeholder="Pesquisar tênis..."> 
+            </div> 
+            <div class="acoes-nav"> 
+                <a href="login.html">Minha conta</a> 
+                <a href="favoritos.html">♡ Favoritos</a> 
+                <a href="carrinho.html">🛒 Carrinho</a> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul>
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="todos.html">Todos os Tênis</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="lançamento.html">Lançamentos</a></li>
+                <li><a href="promoção.html">Promoções</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main> 
+        <div class="titulo"> 
+            <h1>Categorias</h1> 
+            <p>Escolha o estilo de tênis que mais combina com você.</p> 
+        </div> 
+        <div class="categorias"> 
+            <a href="todos.html" class="categoria"> 
+                <img src="images/tenis1.jpg" alt="Tênis engraçados"> 
+                <div class="categoria-info"> 
+                    <h2>Engraçados</h2> 
+                    <p>Modelos com estampas diferentes, memes e designs para chamar atenção.</p> 
+                    <span class="ver">Ver tênis →</span> 
+                </div> 
+            </a> 
+            <a href="todos.html" class="categoria"> 
+                <img src="images/tenis2.jpg" alt="Tênis coloridos"> 
+                <div class="categoria-info"> 
+                    <h2>Coloridos</h2> 
+                    <p>Tênis cheios de cores para deixar qualquer visual mais divertido.</p> 
+                    <span class="ver">Ver tênis →</span> 
+                </div> 
+            </a> 
+            <a href="todos.html" class="categoria"> 
+                <img src="images/tenis3.jpg" alt="Tênis diferentes"> 
+                <div class="categoria-info"> 
+                    <h2>Diferentes</h2> 
+                    <p>Modelos únicos para quem não gosta de usar o mesmo tênis de todo mundo.</p> 
+                    <span class="ver">Ver tênis →</span> 
+                </div> 
+            </a> 
+            <a href="todos.html" class="categoria"> 
+                <img src="images/tenis1.jpg" alt="Tênis meme"> 
+                <div class="categoria-info"> 
+                    <h2>Memes</h2> 
+                    <p>Estampas inspiradas em memes e referências que todo mundo conhece.</p> 
+                    <span class="ver">Ver tênis →</span> 
+                </div> 
+            </a> 
+            <a href="todos.html" class="categoria"> 
+                <img src="images/tenis2.jpg" alt="Tênis infantis"> 
+                <div class="categoria-info"> 
+                    <h2>Infantis</h2> 
+                    <p>Modelos divertidos e coloridos para deixar o visual das crianças mais legal.</p> 
+                    <span class="ver">Ver tênis →</span> 
+                </div> 
+            </a> 
+            <a href="promoção.html" class="categoria"> 
+                <img src="images/tenis3.jpg" alt="Tênis em promoção"> 
+                <div class="categoria-info"> 
+                    <h2>Promoções</h2> 
+                    <p>Confira alguns dos nossos tênis com preços especiais.</p> 
+                    <span class="ver">Ver promoções →</span> 
+                </div> 
+            </a> 
+        </div> 
+    </main>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Login - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            min-height: 100vh; 
+            background: #0d0d0d; 
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        } 
+        .login { 
+            width: 420px; 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 15px; 
+            padding: 45px; 
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5); 
+        } 
+        .logo { 
+            text-align: center; 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            margin-bottom: 35px; 
+        } 
+        h1 { 
+            text-align: center; 
+            font-size: 30px; 
+            margin-bottom: 10px; 
+        } 
+        .descricao { 
+            text-align: center; 
+            color: #888; 
+            font-size: 14px; 
+            margin-bottom: 30px; 
+        } 
+        .campo { 
+            margin-bottom: 20px; 
+        } 
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            color: #ddd; 
+            font-size: 14px; 
+            font-weight: bold; 
+        } 
+        input { 
+            width: 100%; 
+            height: 50px; 
+            background: #202020; 
+            border: 1px solid #353535; 
+            border-radius: 8px; 
+            padding: 0 15px; 
+            color: white; 
+            outline: none; 
+            font-size: 14px; 
+        } 
+        input:focus { 
+            border-color: #ffd500; 
+        } 
+        .senha { 
+            text-align: right; 
+            margin-top: -8px; 
+            margin-bottom: 25px; 
+        } 
+        .senha a { 
+            color: #ffd500; 
+            text-decoration: none; 
+            font-size: 13px; 
+        } 
+        .senha a:hover {
+            text-decoration: underline;
+        }
+        button { 
+            width: 100%; 
+            height: 50px; 
+            border: none; 
+            border-radius: 8px; 
+            background: #ffd500; 
+            color: #111; 
+            font-weight: 900; 
+            font-size: 15px; 
+            cursor: pointer; 
+            transition: background 0.2s, transform 0.1s;
+        } 
+        button:hover { 
+            background: #e8c000; 
+        } 
+        button:active {
+            transform: scale(0.98);
+        }
+        .cadastro { 
+            text-align: center; 
+            margin-top: 25px; 
+            color: #888; 
+            font-size: 14px; 
+        } 
+        .cadastro a { 
+            color: #ffd500; 
+            text-decoration: none; 
+            font-weight: bold; 
+        } 
+        .cadastro a:hover {
+            text-decoration: underline;
+        }
+        .voltar { 
+            display: block; 
+            text-align: center; 
+            margin-top: 25px; 
+            color: #aaa; 
+            text-decoration: none; 
+            font-size: 13px; 
+            transition: color 0.2s;
+        } 
+        .voltar:hover { 
+            color: #ffd500; 
+        } 
+        @media (max-width: 500px) { 
+            .login { 
+                width: calc(100% - 30px); 
+                padding: 35px 25px; 
+            } 
+        } 
+    </style>
+</head>
+<body> 
+    <main class="login"> 
+        <div class="logo">TÊNIS ENGRAÇADOS</div> 
+        <h1>Entrar</h1> 
+        <p class="descricao"> Entre na sua conta para continuar. </p> 
+        <form> 
+            <div class="campo"> 
+                <label for="email">E-mail</label> 
+                <input type="email" id="email" placeholder="Digite seu e-mail" required> 
+            </div> 
+            <div class="campo"> 
+                <label for="senha">Senha</label> 
+                <input type="password" id="senha" placeholder="Digite sua senha" required> 
+            </div> 
+            <div class="senha"> 
+                <a href="javascript:void(0)">Esqueci minha senha</a> 
+            </div> 
+            
+            <!-- BOTÃO REFEITO PARA ENTRAR DIRETAMENTE NA PÁGINA inicio.html -->
+            <button type="button" onclick="window.location.href='inicio.html'">ENTRAR</button> 
+        </form> 
+        
+        <div class="cadastro"> 
+            <!-- LINK REFEITO PARA DIRECIONAR PARA A PÁGINA criar.html -->
+            Ainda não tem uma conta? <a href="criar.html">Criar conta</a> 
+        </div> 
+        
+        <a href="inicio.html" class="voltar">← Voltar para a loja</a> 
+    </main>
+</body>
+</html>

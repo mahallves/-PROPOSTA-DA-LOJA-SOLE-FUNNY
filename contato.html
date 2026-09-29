@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Contato - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+            min-height: 100vh; 
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+            gap: 30px; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            white-space: nowrap; 
+        } 
+        .pesquisa { 
+            width: 430px; 
+            height: 43px; 
+            background: #1c1c1c; 
+            border: 1px solid #333; 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            padding: 0 15px; 
+        } 
+        .pesquisa input { 
+            width: 100%; 
+            background: transparent; 
+            border: none; 
+            outline: none; 
+            color: white; 
+            font-size: 14px; 
+        } 
+        .pesquisa input::placeholder { 
+            color: #777; 
+        } 
+        .acoes { 
+            display: flex; 
+            gap: 22px; 
+        } 
+        .acoes a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+        } 
+        .acoes a:hover { 
+            color: #ffd500; 
+        } 
+        nav { 
+            height: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-top: 1px solid #222; 
+        } 
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 38px; 
+        } 
+        nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        } 
+        nav a:hover { 
+            color: #ffd500; 
+        } 
+        .conteudo { 
+            max-width: 1150px; 
+            margin: 0 auto; 
+            padding: 60px 30px 80px; 
+        } 
+        .titulo { 
+            text-align: center; 
+            margin-bottom: 50px; 
+        } 
+        .titulo h1 { 
+            font-size: 42px; 
+            margin-bottom: 12px; 
+        } 
+        .titulo h1 span { 
+            color: #ffd500; 
+        } 
+        .titulo p { 
+            color: #888; 
+            font-size: 15px; 
+        } 
+        .contato-area { 
+            display: grid; 
+            grid-template-columns: 0.8fr 1.2fr; 
+            gap: 30px; 
+        } 
+        .informacoes { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 15px; 
+            padding: 35px; 
+        } 
+        .informacoes h2 { 
+            font-size: 25px; 
+            margin-bottom: 25px; 
+        } 
+        .informacao { 
+            display: flex; 
+            align-items: center; 
+            gap: 18px; 
+            padding: 20px 0; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .informacao:last-child { 
+            border-bottom: none; 
+        } 
+        .icone { 
+            width: 48px; 
+            height: 48px; 
+            background: #ffd500; 
+            color: #111; 
+            border-radius: 9px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 21px; 
+            flex-shrink: 0; 
+        } 
+        .informacao h3 { 
+            font-size: 14px; 
+            margin-bottom: 6px; 
+        } 
+        .informacao p, .informacao a { 
+            color: #999; 
+            font-size: 13px; 
+            text-decoration: none; 
+        } 
+        .informacao a:hover { 
+            color: #ffd500; 
+        } 
+        .formulario { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 15px; 
+            padding: 35px; 
+        } 
+        .formulario h2 { 
+            font-size: 25px; 
+            margin-bottom: 25px; 
+        } 
+        .campo { 
+            margin-bottom: 20px; 
+        } 
+        .campo label { 
+            display: block; 
+            color: #ddd; 
+            font-size: 14px; 
+            font-weight: bold; 
+            margin-bottom: 8px; 
+        } 
+        .campo input, .campo textarea { 
+            width: 100%; 
+            background: #202020; 
+            border: 1px solid #353535; 
+            border-radius: 8px; 
+            color: white; 
+            outline: none; 
+            padding: 13px; 
+            font-size: 14px; 
+        } 
+        .campo input { 
+            height: 48px; 
+        } 
+        .campo textarea { 
+            height: 145px; 
+            resize: none; 
+        } 
+        .campo input:focus, .campo textarea:focus { 
+            border-color: #ffd500; 
+        } 
+        .botao { 
+            width: 100%; 
+            height: 50px; 
+            border: none; 
+            border-radius: 8px; 
+            background: #ffd500; 
+            color: #111; 
+            font-weight: 900; 
+            font-size: 14px; 
+            cursor: pointer; 
+            transition: background 0.2s;
+        } 
+        .botao:hover { 
+            background: #e8c000; 
+        } 
+        .instagram { 
+            margin-top: 30px; 
+            background: #ffd500; 
+            color: #111; 
+            border-radius: 13px; 
+            padding: 25px; 
+            text-align: center; 
+        } 
+        .instagram h2 { 
+            font-size: 20px; 
+            margin-bottom: 8px; 
+        } 
+        .instagram p { 
+            font-size: 13px; 
+            margin-bottom: 17px; 
+        } 
+        .instagram a { 
+            display: inline-block; 
+            background: #111; 
+            color: #ffd500; 
+            text-decoration: none; 
+            padding: 12px 25px; 
+            border-radius: 7px; 
+            font-weight: bold; 
+            font-size: 13px; 
+            transition: background 0.2s;
+        } 
+        .instagram a:hover { 
+            background: #222; 
+        } 
+        @media (max-width: 900px) { 
+            .pesquisa { width: 300px; } 
+            .contato-area { grid-template-columns: 1fr; } 
+        } 
+        @media (max-width: 650px) { 
+            .topo { height: auto; padding: 20px; flex-wrap: wrap; } 
+            .logo { width: 100%; text-align: center; } 
+            .pesquisa { width: 100%; } 
+            .acoes { width: 100%; justify-content: center; } 
+            nav { overflow-x: auto; justify-content: flex-start; padding: 15px; } 
+            nav ul { gap: 25px; white-space: nowrap; } 
+            .conteudo { padding: 40px 15px; } 
+            .titulo h1 { font-size: 34px; } 
+            .informacoes, .formulario { padding: 25px; } 
+        } 
+    </style>
+</head>
+<body> 
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <div class="pesquisa"> 
+                <input type="text" placeholder="Pesquisar tênis..."> 
+            </div> 
+            <div class="acoes"> 
+                <a href="login.html">Minha conta</a> 
+                <a href="favoritos.html">♡ Favoritos</a> 
+                <a href="carrinho.html">🛒 Carrinho</a> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul> 
+                <li><a href="inicio.html">Início</a></li> 
+                <li><a href="todos.html">Todos os Tênis</a></li> 
+                <li><a href="categorias.html">Categorias</a></li> 
+                <li><a href="lançamento.html">Lançamentos</a></li> 
+                <li><a href="promoção.html">Promoções</a></li> 
+                <li><a href="sobre.html">Sobre Nós</a></li> 
+                <li><a href="contato.html">Contato</a></li> 
+            </ul> 
+        </nav> 
+    </header> 
+    <main class="conteudo"> 
+        <section class="titulo"> 
+            <h1>Fale <span>com a gente!</span></h1> 
+            <p> Tem alguma dúvida, sugestão ou precisa de ajuda? Estamos aqui para ajudar. </p> 
+        </section> 
+        <section class="contato-area"> 
+            <div> 
+                <div class="informacoes"> 
+                    <h2>Entre em contato</h2> 
+                    <div class="informacao"> 
+                        <div class="icone">📞</div> 
+                        <div> 
+                            <h3>Telefone</h3> 
+                            <p>(41) 99876-5432</p> 
+                        </div> 
+                    </div> 
+                    <div class="informacao"> 
+                        <div class="icone">✉</div> 
+                        <div> 
+                            <h3>E-mail</h3> 
+                            <p>contato@tenisengracados.com</p> 
+                        </div> 
+                    </div> 
+                    <div class="informacao"> 
+                        <div class="icone">⌖</div> 
+                        <div> 
+                            <h3>Atendimento</h3> 
+                            <p>Segunda a sexta, das 9h às 18h</p> 
+                        </div> 
+                    </div> 
+                </div> 
+                <div class="instagram"> 
+                    <h2> Nosso Instagram</h2> 
+                    <p> Acompanhe nossos tênis e novidades. </p> 
+                    <a href="https://instagram.com" target="_blank"> @sole._funny </a> 
+                </div> 
+            </div> 
+            <div class="formulario"> 
+                <h2>Envie uma mensagem</h2> 

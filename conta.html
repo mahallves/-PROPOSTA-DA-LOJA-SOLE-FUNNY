@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Minha Conta - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+            min-height: 100vh;
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+            gap: 30px; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            white-space: nowrap; 
+        } 
+        .pesquisa { 
+            width: 430px; 
+            height: 43px; 
+            background: #1c1c1c; 
+            border: 1px solid #333; 
+            border-radius: 8px; 
+            padding: 0 15px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .pesquisa input { 
+            width: 100%; 
+            border: none; 
+            outline: none; 
+            background: transparent; 
+            color: white; 
+            font-size: 14px; 
+        } 
+        .pesquisa input::placeholder { 
+            color: #777; 
+        } 
+        .acoes-nav { 
+            display: flex; 
+            gap: 22px; 
+        } 
+        .acoes-nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            transition: color 0.2s;
+        } 
+        .acoes-nav a:hover { 
+            color: #ffd500; 
+        } 
+        nav { 
+            height: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-top: 1px solid #222; 
+        } 
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 38px; 
+        } 
+        nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        } 
+        nav a:hover { 
+            color: #ffd500; 
+        } 
+        main { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 60px 30px 80px; 
+        } 
+        .titulo { 
+            margin-bottom: 35px; 
+        } 
+        .titulo h1 { 
+            font-size: 36px; 
+            margin-bottom: 8px; 
+        } 
+        .titulo p { 
+            color: #888; 
+            font-size: 15px;
+        } 
+        .conta { 
+            display: grid; 
+            grid-template-columns: 250px 1fr; 
+            gap: 30px; 
+        } 
+        .menu { 
+            background: #151515; 
+            border: 1px solid #292929;
+            border-radius: 12px; 
+            padding: 20px; 
+            height: fit-content; 
+        } 
+        .menu a { 
+            display: block; 
+            color: #ddd; 
+            text-decoration: none; 
+            padding: 13px 10px; 
+            font-size: 14px;
+            border-bottom: 1px solid #252525; 
+            transition: color 0.2s;
+        } 
+        .menu a:hover { 
+            color: #ffd500; 
+        } 
+        .menu a:last-child { 
+            border-bottom: none; 
+        } 
+        .dados { 
+            background: #151515; 
+            border: 1px solid #292929;
+            border-radius: 12px; 
+            padding: 30px; 
+        } 
+        .perfil { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            padding-bottom: 25px; 
+            border-bottom: 1px solid #252525; 
+            margin-bottom: 25px; 
+        } 
+        .avatar { 
+            width: 75px; 
+            height: 75px; 
+            border-radius: 50%; 
+            background: #ffd500; 
+            color: #111; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 28px; 
+            font-weight: bold; 
+        } 
+        .perfil h2 { 
+            font-size: 24px; 
+            letter-spacing: 0.5px;
+        } 
+        .perfil p { 
+            color: #888; 
+            margin-top: 5px; 
+            font-size: 14px;
+        } 
+        .informacoes { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+        } 
+        .info { 
+            background: #202020; 
+            border: 1px solid #292929;
+            padding: 18px; 
+            border-radius: 8px; 
+        } 
+        .info span { 
+            display: block; 
+            color: #777; 
+            font-size: 13px; 
+            margin-bottom: 7px; 
+        } 
+        .info strong { 
+            font-size: 16px; 
+            color: #eee;
+        } 
+        .acoes { 
+            margin-top: 30px; 
+            display: flex; 
+            gap: 12px; 
+        } 
+        .acoes a { 
+            text-decoration: none; 
+            padding: 13px 22px; 
+            border-radius: 7px; 
+            font-weight: bold; 
+            font-size: 14px;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        } 
+        .editar { 
+            background: #ffd500; 
+            color: #111; 
+        } 
+        .editar:hover {
+            background: #e8c000;
+        }
+        .sair { 
+            border: 1px solid #353535; 
+            color: #aaa; 
+        } 
+        .sair:hover { 
+            border-color: #ffd500; 
+            color: #ffd500; 
+        } 
+        @media (max-width: 900px) { 
+            .pesquisa { width: 300px; } 
+            .conta { grid-template-columns: 1fr; } 
+        } 
+        @media (max-width: 650px) { 
+            .topo { height: auto; padding: 20px; flex-wrap: wrap; } 
+            .logo { width: 100%; text-align: center; } 
+            .pesquisa { width: 100%; } 
+            .acoes-nav { width: 100%; justify-content: center; } 
+            nav { overflow-x: auto; justify-content: flex-start; padding: 15px; } 
+            nav ul { gap: 25px; white-space: nowrap; } 
+            main { padding: 40px 15px; } 
+            .titulo h1 { font-size: 29px; }
+            .informacoes { grid-template-columns: 1fr; } 
+            .acoes { flex-direction: column; }
+            .acoes a { text-align: center; }
+        } 
+    </style>
+</head>
+<body>
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <div class="pesquisa"> 
+                <input type="text" placeholder="Pesquisar tênis..."> 
+            </div> 
+            <div class="acoes-nav"> 
+                <a href="conta.html">Minha conta</a> 
+                <a href="favoritos.html">♡ Favoritos</a> 
+                <a href="carrinho.html">🛒 Carrinho</a> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul>
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="todos.html">Todos os Tênis</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="lançamento.html">Lançamentos</a></li>
+                <li><a href="promoção.html">Promoções</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main> 
+        <div class="titulo"> 
+            <h1>Minha conta</h1> 
+            <p>Bem-vindo de volta, Leonardo!</p> 
+        </div> 
+        <div class="conta"> 
+            <aside class="menu"> 
+                <a href="conta.html">Minha conta</a> 
+                <a href="pedidos.html">Meus pedidos</a> 
+                <a href="favoritos.html">Meus favoritos</a> 
+                <a href="endereço.html">Meus endereços</a> 
+                <a href="login.html">Sair da conta</a> 
+            </aside> 
+            <section class="dados"> 
+                <div class="perfil">
+                    <div class="avatar">L</div> 
+                    <div> 
+                        <h2>LEONARDO</h2> 
+                        <p>Conta criada na Tênis Engraçados</p> 
+                    </div> 
+                </div> 
+                <div class="informacoes"> 
+                    <div class="info"> 
+                        <span>Nome</span> 
+                        <strong>Leonardo</strong> 
+                    </div> 
+                    <div class="info"> 
+                        <span>E-mail</span> 
+                        <strong>leonardo@email.com</strong> 
+                    </div> 
+                    <div class="info"> 
+                        <span>Pedidos realizados</span> 
+                        <strong>3 pedidos</strong> 
+                    </div> 
+                    <div class="info"> 
+                        <span>Favoritos</span> 
+                        <strong>4 tênis</strong> 
+                    </div> 
+                </div> 
+                <div class="acoes"> 
+                    <a href="javascript:void(0)" class="editar">Editar perfil</a> 
+                    <a href="inicio.html" class="sair">Voltar para a loja</a> 
+                </div> 
+            </section> 
+        </div> 
+    </main>
+</body>
+</html>

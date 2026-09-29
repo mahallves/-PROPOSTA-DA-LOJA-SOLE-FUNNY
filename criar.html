@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Criar Conta - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+            min-height: 100vh; 
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+        } 
+        .voltar { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            transition: color 0.2s;
+        } 
+        .voltar:hover { 
+            color: #ffd500; 
+        } 
+        main { 
+            min-height: calc(100vh - 83px); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 50px 20px; 
+        } 
+        .cadastro { 
+            width: 100%; 
+            max-width: 460px; 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 12px; 
+            padding: 38px; 
+        } 
+        .titulo { 
+            text-align: center; 
+            margin-bottom: 30px; 
+        } 
+        .titulo h1 { 
+            font-size: 30px; 
+            margin-bottom: 9px; 
+        } 
+        .titulo p { 
+            color: #888; 
+            font-size: 14px; 
+        } 
+        .campo { 
+            margin-bottom: 18px; 
+        } 
+        .campo label { 
+            display: block; 
+            font-size: 13px; 
+            font-weight: bold; 
+            margin-bottom: 8px; 
+        } 
+        .campo input { 
+            width: 100%; 
+            height: 45px; 
+            background: #202020; 
+            border: 1px solid #333; 
+            border-radius: 7px; 
+            padding: 0 13px; 
+            color: white; 
+            outline: none; 
+            font-size: 14px; 
+        } 
+        .campo input:focus { 
+            border-color: #ffd500; 
+        } 
+        .criar { 
+            width: 100%; 
+            height: 46px; 
+            margin-top: 8px; 
+            border: none; 
+            border-radius: 7px; 
+            background: #ffd500; 
+            color: #111; 
+            font-size: 14px; 
+            font-weight: 900; 
+            cursor: pointer; 
+            transition: background 0.2s, transform 0.1s;
+        } 
+        .criar:hover { 
+            background: #e8c000; 
+        } 
+        .criar:active {
+            transform: scale(0.98);
+        }
+        .login { 
+            text-align: center; 
+            margin-top: 25px; 
+            color: #888; 
+            font-size: 14px; 
+        } 
+        .login a { 
+            color: #ffd500; 
+            text-decoration: none; 
+            font-weight: bold; 
+        } 
+        .login a:hover { 
+            text-decoration: underline; 
+        } 
+        .loja { 
+            display: block; 
+            text-align: center; 
+            margin-top: 22px; 
+            color: #777; 
+            text-decoration: none; 
+            font-size: 13px; 
+            transition: color 0.2s;
+        } 
+        .loja:hover { 
+            color: #ffd500; 
+        } 
+        @media (max-width: 600px) { 
+            .topo { padding: 0 20px; } 
+            .logo { font-size: 20px; } 
+            .cadastro { padding: 28px 22px; } 
+            .titulo h1 { font-size: 26px; } 
+        } 
+    </style>
+</head>
+<body>
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <a href="login.html" class="voltar"> Já tenho uma conta </a> 
+        </div>
+    </header>
+    <main> 
+        <section class="cadastro"> 
+            <div class="titulo"> 
+                <h1>Criar sua conta</h1> 
+                <p>Crie sua conta para comprar seus tênis favoritos.</p> 
+            </div> 
+            
+            <!-- FORMULÁRIO CONFIGURADO PARA ENVIAR E REDIRECIONAR PARA inicio.html -->
+            <form id="form-cadastro" action="inicio.html"> 
+                <div class="campo"> 
+                    <label for="nome">Nome completo</label> 
+                    <input type="text" id="nome" placeholder="Digite seu nome" required> 
+                </div> 
+                <div class="campo"> 
+                    <label for="email">E-mail</label> 
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required> 
+                </div> 
+                <div class="campo"> 
+                    <label for="senha">Senha</label> 
+                    <input type="password" id="senha" placeholder="Crie uma senha" required> 
+                </div> 
+                <div class="campo"> 
+                    <label for="confirmar">Confirmar senha</label> 
+                    <input type="password" id="confirmar" placeholder="Digite a senha novamente" required> 
+                </div> 
+                <button type="submit" class="criar"> CRIAR CONTA </button> 
+            </form> 
+            
+            <div class="login"> 
+                <!-- LINK ATUALIZADO PARA DIRECIONAR PARA login.html -->
+                Já possui uma conta? <a href="login.html">Entrar</a> 
+            </div> 
+            <a href="inicio.html" class="loja"> ← Voltar para a loja </a> 
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('form-cadastro').addEventListener('submit', function(e) {
+            const senha = document.getElementById('senha').value;
+            const confirmar = document.getElementById('confirmar').value;
+
+            if (senha !== confirmar) {
+                e.preventDefault(); // Trava o redirecionamento se a senha estiver errada
+                alert('As senhas não combinam! Por favor, verifique os campos.');
+            }
+        });
+    </script>
+</body>
+</html>

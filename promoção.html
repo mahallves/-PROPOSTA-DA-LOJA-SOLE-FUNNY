@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Promoções - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+            min-height: 100vh;
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+            gap: 30px; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            white-space: nowrap; 
+        } 
+        .pesquisa { 
+            width: 430px; 
+            height: 43px; 
+            background: #1c1c1c; 
+            border: 1px solid #333; 
+            border-radius: 8px; 
+            padding: 0 15px; 
+            display: flex; 
+            align-items: center; 
+        } 
+        .pesquisa input { 
+            width: 100%; 
+            border: none; 
+            outline: none; 
+            background: transparent; 
+            color: white; 
+            font-size: 14px; 
+        } 
+        .pesquisa input::placeholder { 
+            color: #777; 
+        } 
+        .acoes-nav { 
+            display: flex; 
+            gap: 22px; 
+        } 
+        .acoes-nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            transition: color 0.2s;
+        } 
+        .acoes-nav a:hover { 
+            color: #ffd500; 
+        } 
+        nav { 
+            height: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-top: 1px solid #222; 
+        } 
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 38px; 
+        } 
+        nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        } 
+        nav a:hover { 
+            color: #ffd500; 
+        } 
+        main { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 60px 30px 80px; 
+        } 
+        .titulo { 
+            margin-bottom: 35px; 
+        } 
+        .titulo h1 { 
+            font-size: 36px; 
+            margin-bottom: 8px; 
+        } 
+        .titulo p { 
+            color: #888; 
+            font-size: 15px;
+        } 
+        .banner { 
+            background: #ffd500; 
+            color: #111; 
+            border-radius: 12px; 
+            padding: 30px 45px; 
+            margin-bottom: 45px; 
+        } 
+        .banner h2 { 
+            font-size: 28px; 
+            font-weight: 900;
+            margin-bottom: 7px; 
+        } 
+        .banner p { 
+            font-size: 15px; 
+            color: #242000;
+        } 
+        .produtos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+            gap: 25px; 
+        } 
+        .produto { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: border-color 0.2s, transform 0.2s; 
+        } 
+        .produto:hover { 
+            border-color: #ffd500; 
+            transform: translateY(-4px); 
+        } 
+        .imagem { 
+            position: relative; 
+        } 
+        .imagem img { 
+            width: 100%; 
+            height: 220px; 
+            background: #202020;
+            object-fit: contain; 
+            display: block; 
+        } 
+        .desconto { 
+            position: absolute; 
+            top: 12px; 
+            left: 12px; 
+            background: #ffd500; 
+            color: #111; 
+            padding: 6px 10px; 
+            border-radius: 4px; 
+            font-size: 11px; 
+            font-weight: 900; 
+        } 
+        .info { 
+            padding: 20px; 
+        } 
+        .info h2 { 
+            font-size: 18px; 
+            margin-bottom: 8px; 
+        } 
+        .info p { 
+            color: #888; 
+            font-size: 13px; 
+            margin-bottom: 12px; 
+        } 
+        .antigo { 
+            color: #666; 
+            text-decoration: line-through; 
+            font-size: 14px; 
+            margin-bottom: 5px; 
+        } 
+        .preco { 
+            color: #ffd500; 
+            font-size: 21px; 
+            font-weight: 900; 
+        } 
+        .ver { 
+            display: block; 
+            margin-top: 15px; 
+            background: #ffd500; 
+            color: #111; 
+            text-align: center; 
+            padding: 11px; 
+            border-radius: 7px; 
+            font-weight: bold; 
+            font-size: 14px;
+            transition: background 0.2s;
+        } 
+        .produto:hover .ver {
+            background: #e8c000;
+        }
+        @media (max-width: 900px) { 
+            .pesquisa { width: 300px; } 
+        } 
+        @media (max-width: 750px) { 
+            .topo { height: auto; padding: 20px; flex-wrap: wrap; } 
+            .logo { width: 100%; text-align: center; } 
+            .pesquisa { width: 100%; } 
+            .acoes-nav { width: 100%; justify-content: center; } 
+            nav { overflow-x: auto; justify-content: flex-start; padding: 15px; } 
+            nav ul { gap: 25px; white-space: nowrap; } 
+            main { padding: 40px 15px; } 
+            .titulo h1 { font-size: 29px; }
+            .banner { padding: 25px; }
+        } 
+    </style>
+</head>
+<body>
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <div class="pesquisa"> 
+                <input type="text" placeholder="Pesquisar tênis..."> 
+            </div> 
+            <div class="acoes-nav"> 
+                <a href="conta.html">Minha conta</a> 
+                <a href="favoritos.html">♡ Favoritos</a> 
+                <a href="carrinho.html">🛒 Carrinho</a> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul>
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="todos.html">Todos os Tênis</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="lançamento.html">Lançamentos</a></li>
+                <li><a href="promoção.html">Promoções</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main> 
+        <div class="titulo"> 
+            <h1>Promoções</h1> 
+            <p>Aproveite os discounts nos nossos tênis engraçados.</p> 
+        </div> 
+        <div class="banner"> 
+            <h2>OFERTAS ESPECIAIS</h2> 
+            <p>Alguns modelos estão com preços reduzidos por tempo limitado.</p> 
+        </div> 
+        <div class="produtos"> 
+            <a href="produto.html" class="produto"> 
+                <div class="imagem"> 
+                    <img src="images/tenis1.jpg" alt="Tênis Brainrot"> 
+                    <span class="desconto">-20%</span> 
+                </div> 
+                <div class="info"> 
+                    <h2>Tênis Brainrot</h2> 
+                    <p>Estampa engraçada e exclusiva</p> 
+                    <div class="antigo">R$ 62,49</div> 
+                    <div class="preco">R$ 49,99</div> 
+                    <span class="ver">Ver produto</span> 
+                </div> 
+            </a> 
+            <a href="produto.html" class="produto"> 
+                <div class="imagem"> 
+                    <img src="images/tenis2.jpg" alt="Tênis Estampa Doida"> 
+                    <span class="desconto">-15%</span> 
+                </div> 
+                <div class="info">
+                    <h2>Tênis Estampa Doida</h2>
+                    <p>Um modelo para sair do comum</p>
+                    <div class="antigo">R$ 70,58</div>
+                    <div class="preco">R$ 59,99</div>
+                    <span class="ver">Ver produto</span>
+                </div>
+            </a>
+        </div> 
+    </main>
+</body>
+</html>

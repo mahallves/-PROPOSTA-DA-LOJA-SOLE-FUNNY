@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Sobre Nós - Tênis Engraçados</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, Helvetica, sans-serif; 
+        } 
+        body { 
+            background: #0d0d0d; 
+            color: white; 
+            min-height: 100vh; 
+        } 
+        header { 
+            background: #111; 
+            border-bottom: 1px solid #292929; 
+        } 
+        .topo { 
+            height: 82px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 6%; 
+            gap: 30px; 
+        } 
+        .logo { 
+            color: #ffd500; 
+            font-size: 25px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            white-space: nowrap; 
+        } 
+        .pesquisa { 
+            width: 430px; 
+            height: 43px; 
+            background: #1c1c1c; 
+            border: 1px solid #333; 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            padding: 0 15px; 
+        } 
+        .pesquisa input { 
+            width: 100%; 
+            background: transparent; 
+            border: none; 
+            outline: none; 
+            color: white; 
+            font-size: 14px; 
+        } 
+        .pesquisa input::placeholder { 
+            color: #777; 
+        } 
+        .acoes { 
+            display: flex; 
+            gap: 22px; 
+        } 
+        .acoes a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+        } 
+        .acoes a:hover { 
+            color: #ffd500; 
+        } 
+        nav { 
+            height: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-top: 1px solid #222; 
+        } 
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 38px; 
+        } 
+        nav a { 
+            color: #ddd; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        } 
+        nav a:hover { 
+            color: #ffd500; 
+        } 
+        .conteudo { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 60px 30px 80px; 
+        } 
+        .principal { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 60px; 
+            align-items: center; 
+            margin-bottom: 75px; 
+        } 
+        .texto-principal h1 { 
+            font-size: 48px; 
+            line-height: 1.05; 
+            margin-bottom: 22px; 
+        } 
+        .texto-principal h1 span { 
+            color: #ffd500; 
+        } 
+        .texto-principal p { 
+            color: #999; 
+            font-size: 16px; 
+            line-height: 1.8; 
+            margin-bottom: 18px; 
+        } 
+        .imagem-principal { 
+            height: 390px; 
+            background: #ffd500; 
+            border-radius: 18px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+            position: relative; 
+        } 
+        .imagem-principal img { 
+            width: 85%; 
+            height: 85%; 
+            object-fit: contain; 
+            transform: rotate(-8deg); 
+            filter: drop-shadow(0 25px 15px rgba(0,0,0,0.3)); 
+        } 
+        .bolha { 
+            position: absolute; 
+            right: 25px; 
+            bottom: 25px; 
+            width: 110px; 
+            height: 110px; 
+            background: #111; 
+            color: #ffd500; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            font-weight: 900; 
+            font-size: 14px; 
+            transform: rotate(8deg); 
+        } 
+        .titulo-secao { 
+            text-align: center; 
+            margin-bottom: 35px; 
+        } 
+        .titulo-secao h2 { 
+            font-size: 32px; 
+            margin-bottom: 10px; 
+        } 
+        .titulo-secao p { 
+            color: #777; 
+            font-size: 14px; 
+        } 
+        .historia { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 15px; 
+            padding: 40px; 
+            margin-bottom: 70px; 
+        } 
+        .historia h2 { 
+            color: #ffd500; 
+            font-size: 26px; 
+            margin-bottom: 20px; 
+        } 
+        .historia p { 
+            color: #aaa; 
+            line-height: 1.8; 
+            font-size: 15px; 
+            margin-bottom: 15px; 
+        } 
+        .cards { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 22px; 
+            margin-bottom: 70px; 
+        } 
+        .card { 
+            background: #151515; 
+            border: 1px solid #292929; 
+            border-radius: 13px; 
+            padding: 30px; 
+            min-height: 200px; 
+        } 
+        .icone { 
+            width: 48px; 
+            height: 48px; 
+            background: #ffd500; 
+            color: #111; 
+            border-radius: 10px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 23px; 
+            margin-bottom: 20px; 
+        } 
+        .card h3 { 
+            font-size: 18px; 
+            margin-bottom: 12px; 
+        } 
+        .card p { 
+            color: #888; 
+            font-size: 14px; 
+            line-height: 1.6; 
+        } 
+        .frase { 
+            background: #ffd500; 
+            color: #111; 
+            border-radius: 15px; 
+            padding: 45px; 
+            text-align: center; 
+        } 
+        .frase h2 { 
+            font-size: 32px; 
+            font-weight: 900; 
+            margin-bottom: 12px; 
+        } 
+        .frase p { 
+            font-size: 15px; 
+            max-width: 650px; 
+            margin: auto; 
+            line-height: 1.6; 
+        } 
+        @media (max-width: 900px) { 
+            .pesquisa { width: 300px; } 
+            .principal { grid-template-columns: 1fr; } 
+        } 
+        @media (max-width: 650px) { 
+            .topo { height: auto; padding: 20px; flex-wrap: wrap; } 
+            .logo { width: 100%; text-align: center; } 
+            .pesquisa { width: 100%; } 
+            .acoes { width: 100%; justify-content: center; } 
+            nav { overflow-x: auto; justify-content: flex-start; padding: 15px; } 
+            nav ul { gap: 25px; white-space: nowrap; } 
+            .conteudo { padding: 40px 15px; } 
+            .texto-principal h1 { font-size: 37px; } 
+            .imagem-principal { height: 300px; } 
+            .historia { padding: 28px; } 
+            .frase { padding: 35px 20px; } 
+            .frase h2 { font-size: 25px; } 
+        } 
+    </style>
+</head>
+<body> 
+    <header> 
+        <div class="topo"> 
+            <a href="inicio.html" class="logo">TÊNIS ENGRAÇADOS</a> 
+            <div class="pesquisa"> 
+                <input type="text" placeholder="Pesquisar tênis..."> 
+            </div> 
+            <div class="acoes"> 
+                <a href="login.html">Minha conta</a> 
+                <a href="favoritos.html">♡ Favoritos</a> 
+                <a href="carrinho.html">🛒 Carrinho</a> 
+            </div> 
+        </div> 
+        <nav> 
+            <ul> 
+                <li><a href="inicio.html">Início</a></li> 
+                <li><a href="todos.html">Todos os Tênis</a></li> 
+                <li><a href="categorias.html">Categorias</a></li> 
+                <li><a href="lançamento.html">Lançamentos</a></li> 
+                <li><a href="promoção.html">Promoções</a></li> 
+                <li><a href="sobre.html">Sobre Nós</a></li> 
+                <li><a href="contato.html">Contato</a></li> 
+            </ul> 
+        </nav> 
+    </header> 
+    <main class="conteudo">
+        <section class="principal"> 
+            <div class="texto-principal"> 
+                <h1> Muito mais que um tênis.<br> <span>É personalidade.</span> </h1> 
+                <p> A Tênis Engraçados nasceu para quem não gosta de passar despercebido. Criamos uma plataforma para reunir modelos diferentes, criativos e divertidos em um só lugar. </p> 
+                <p> Aqui, cada tênis tem seu próprio estilo. Nossa ideia é transformar um produto do dia a dia em algo que tenha a cara de quem usa. </p> 
+            </div> 
+            <div class="imagem-principal"> 
+                <img src="images/tenis1.jpg" alt="Tênis engraçado"> 
+                <div class="bolha"> SEJA<br> DIFERENTE! </div> 
+            </div> 
+        </section> 
+        <section class="historia"> 
+            <h2>Quem somos?</h2> 
+            <p> Somos uma plataforma focada em tênis criativos e estampas que fogem do comum. Nosso objetivo é oferecer uma experiência de compra simples, divertida e diferente das lojas tradicionais. </p> 
+            <p> Acreditamos que escolher um tênis também pode ser uma forma de mostrar personalidade, humor e criatividade. </p> 
+            <p> Por isso, buscamos reunir modelos para diferentes estilos, desde estampas engraçadas até designs completamente fora do padrão. </p> 
+        </section> 
+        <section> 
+            <div class="titulo-secao"> 
+                <h2>O que faz a gente diferente?</h2> 
+                <p>Uma loja feita para quem gosta de sair do comum.</p> 
+            </div> 
+            <div class="cards"> 
+                <div class="card"> 
+                    <div class="icone">★</div> 
+                    <h3>Modelos criativos</h3> 
